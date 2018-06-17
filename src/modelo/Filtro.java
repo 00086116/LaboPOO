@@ -1,42 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package modelo;
 
-/**
- *
- * @author LN710Q
- */
 public class Filtro {
     private int id;
     private String codigo;
     private String marca;
     private int stock;
     private boolean existencia;
-    
-    public Filtro(){}
-    public Filtro(int id, String codigo, String marca, int stock, boolean existencia){
-        this.codigo = codigo;
-        this.existencia = existencia;
+
+    public Filtro() {
+    }
+
+    public Filtro(int id, String codigo, String marca, int stock, boolean existencia) {
         this.id = id;
-        this.marca = marca;
-        this.stock = stock;
-                
-    }
-    public Filtro(String codigo, String marca, int stock, boolean existencia){
         this.codigo = codigo;
+        this.marca = marca;
+        this.stock = stock;
         this.existencia = existencia;
-        
-        this.marca = marca;
-        this.stock = stock;
-                
     }
-    public Filtro(String marca, int stock, boolean existencia){
-        this.existencia = existencia; 
+
+    public Filtro(String codigo, String marca, int stock, boolean existencia) {
+        this.codigo = codigo;
         this.marca = marca;
         this.stock = stock;
+        this.existencia = existencia;
+    }
+
+    public Filtro(String marca, int stock, boolean existencia) {
+        this.marca = marca;
+        this.stock = stock;
+        this.existencia = existencia;
     }
 
     public int getId() {
@@ -78,10 +70,5 @@ public class Filtro {
     public void setExistencia(boolean existencia) {
         this.existencia = existencia;
     }
-
-    public Object getExistencia() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
     
 }
