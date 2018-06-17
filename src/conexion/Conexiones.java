@@ -5,27 +5,27 @@ import java.sql.SQLException;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 
-public class Conexion {
+public class Conexiones {
     private String user;
     private String pass;
     private String driver;
     private String url;
     private Connection cnx;
-    public static Conexion instance;
+    public static Conexiones instance;
     
-    public synchronized static Conexion conectar(){
+    public synchronized static Conexiones conectar(){
         if(instance==null){
-            return new Conexion();
+            return new Conexiones();
         }
         return instance;
     }
-    private Conexion(){
+    private Conexiones(){
         cargarCredenciales();
         try{
             Class.forName(this.driver);
             cnx=(Connection) DriverManager.getConnection(this.url,this.user,this.pass);
         }catch(ClassNotFoundException|SQLException ex){
-            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE,null,ex);
+            Logger.getLogger(Conexiones.class.getName()).log(Level.SEVERE,null,ex);
         }
     }
     private void cargarCredenciales(){

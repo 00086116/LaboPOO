@@ -1,6 +1,6 @@
 package dao;
 
-import conexion.Conexion;
+import conexion.Conexiones;
 import interfaces.metodos;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +17,7 @@ public class FiltroDao implements metodos<Filtro>{
     private static final String SQL_DELETE="DELETE FROM filtros_aceite WHERE codFiltro=?";
     private static final String SQL_READ="SELECT * FROM filtros_aceite WHERE codFiltro=?";
     private static final String SQL_READALL="SELECT * FROM filtros_aceite";
-    private static final Conexion con=Conexion.conectar();
+    private static final Conexiones con=Conexiones.conectar();
     @Override
     public boolean create(Filtro g) {
         PreparedStatement ps;
